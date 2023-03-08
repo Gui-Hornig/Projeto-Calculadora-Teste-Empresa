@@ -12,3 +12,35 @@ function buttonClick(value){
     }
     screen.innerText = buffer;
 }
+
+function handleSymbol(symbol){
+    switch(symbol){
+        case 'C':
+            buffer = '0';
+            runningTotal= 0;
+            break;
+        case '=':
+            if(previousOperator === null){
+                return
+            }
+            flushOperation(parseint(buffer));
+            previousOperator = null;
+            buffer= runningTotal;
+            runningTotal = 0;
+            break;
+        case '←':
+            if(buffer.length ===1){
+                buffer = '0';
+            }else{
+                buffer = buffer.substring(0, buffer.length -1);
+            }
+            break;
+        case '+':
+        case '−':
+        case '×':
+        case '÷':
+            handleMath(symbol);
+            break;
+        
+    }
+}
