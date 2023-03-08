@@ -44,3 +44,20 @@ function handleSymbol(symbol){
         
     }
 }
+
+function handleMath(symbol){
+    if(buffer === '0'){
+        return;
+    }
+
+    const intBuffer = parseInt(buffer);
+
+    if(renningTotal === 0){
+        runningTotal = intBuffer;
+    }else{
+        flushOperation(intBuffer);
+    }
+    previousOperator = symbol;
+    buffer = '0';
+
+}
