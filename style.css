@@ -96,3 +96,12 @@ body{
     .calc-button:active{
         background-color: #c751d2;
     }
+
+    .double{
+        flex-basis: 47%;
+    }
+    
+    .triple{
+        flex-basis: 73%;
+    }
+    
