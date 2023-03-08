@@ -73,3 +73,21 @@ function flushOperation(intBuffer){
         runningTotal /= intBuffer;
     }
 }
+
+function handleNumber(numberString){
+    if(buffer === "0"){
+        buffer = numberString;
+    }else{
+        buffer += numberString;
+    }
+}
+
+function init(){
+    document.querySelector('.calc-buttons').
+    addEventListener('click', function(event){
+        buttonClick(event.target.innerText);
+    })
+
+}
+
+init();
